@@ -1,0 +1,13 @@
+server:
+  port: 8081 # A aplicação de Fornecedor respose à porta 8081
+
+# Configurar banco de dados do fornecedor utilizando banco que subiu com o docker
+
+spring:
+  datasource:
+    username: root
+    password: example
+    url: jdbc:mysql://192.168.99.100:3306/fornecedor
+  jpa:
+    hibernate:
+      ddl-auto: update
