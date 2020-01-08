@@ -1,0 +1,21 @@
+# Use root/example as user/password credentials
+# Connect via docker-machine ip http://192.168.99.100/8080
+version: '3.1'
+
+services:
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    ports:
+      - 3306:3306
+    volumes:
+      - ${PWD}/fornecedorDBs:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
