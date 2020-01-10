@@ -6,3 +6,5 @@ Implementação de projeto com Spring Cloud, utilizando:
 * Java 8 
 * Spring Initializer 
 * Spring Cloud
+* Postman (Requisições)
+* Eureka Server (Server Discover)

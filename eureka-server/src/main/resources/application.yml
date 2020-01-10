@@ -1,0 +1,7 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false # falso por ser o próprio servidor eureka da aplicação
+
+server:
+  port: 8761 # Porta Padrão do Eureka server
