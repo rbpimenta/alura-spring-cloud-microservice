@@ -33,3 +33,20 @@ Vamos durante as aulas:
 // Pasta microservice-repo é a pasta de repositórios de configurações
 
 // Arquivo fornecedor/resources/bootstrap.yml é um arquivo "inicializado" antes de ler as configurações tradicionais (application.yml)
+
+### **Load Balancer e Spring Feign**
+
+Imagine que tenhamos três instâncias da aplicação fornecedor se comunicando com o 
+Eureka Server. Imagine que cada instância tenham portas diferentes na Eureka.
+A aplicação da Loja tem três requisições disponíveis para ela fazer e ela tem que escolher
+qual a melhor.
+
+A escolha de qual instância a aplicação vai usar para escolher a melhor instância não
+é realizada pelo Eureka Server e sim pelo **Ribbon**.
+
+O **Ribbon** faz o Client-Side Load Balancer, onde a cada requisição que ele fizer ele distribui
+tais requisições para cada instância (distribuindo a carga). Esse Ribbon está "configurado" na
+classe LojaApplication, quando configuramos o RestTemplate para o Eureka.
+
+A utilização do RestTemplate em CompraService já tem a inteligência do LoadBalancer.
+Vamos injetar o DiscoveryCliente para analisar o comportamento.
