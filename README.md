@@ -5,7 +5,7 @@ Implementação de projeto com Spring Cloud, utilizando:
 * Banco de Dados: MariaDB (Rodando via docker, ver pasta database)
 * Java 8 
 * Spring Initializer 
-* Spring Cloud
+* Spring Cloud NetFlix
 * Postman (Requisições)
 * Eureka Server (Server Discover)
 
@@ -36,6 +36,7 @@ Vamos durante as aulas:
 
 ### **Load Balancer e Spring Feign**
 
+##### Load Balancer
 Imagine que tenhamos três instâncias da aplicação fornecedor se comunicando com o 
 Eureka Server. Imagine que cada instância tenham portas diferentes na Eureka.
 A aplicação da Loja tem três requisições disponíveis para ela fazer e ela tem que escolher
@@ -50,3 +51,9 @@ classe LojaApplication, quando configuramos o RestTemplate para o Eureka.
 
 A utilização do RestTemplate em CompraService já tem a inteligência do LoadBalancer.
 Vamos injetar o DiscoveryCliente para analisar o comportamento.
+
+##### Spring Feign
+
+Para usar iremos reconfigurar a aplicação, não utilizando mais o RestTemplate.
+Nesse momento deixaremos de usar alguns métodos já utilizados na class CompraService
+(que estarão comentados).

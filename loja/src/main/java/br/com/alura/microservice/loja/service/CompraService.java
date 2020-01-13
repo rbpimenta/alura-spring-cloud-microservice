@@ -1,24 +1,34 @@
 package br.com.alura.microservice.loja.service;
 
+import br.com.alura.microservice.loja.client.FornecedorClient;
 import br.com.alura.microservice.loja.controller.dto.CompraDTO;
 import br.com.alura.microservice.loja.controller.dto.InfoFornecedorDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 @Service
 public class CompraService {
 
     @Autowired
+    private FornecedorClient fornecedorClient;
+
+    public void realizaCompra(CompraDTO compra) {
+
+        // Quem faz agora a requisição para o fornecedor é a interface FornecedorClient
+        InfoFornecedorDTO info = fornecedorClient.getInfoPorEstado(compra.getEndereco().getEstado());
+        System.out.println(info.getEndereco());
+    }
+
+    /*
+        > Com a implementação do Spring Feign a implementação abaixo foi toda comentada.
+
+    @Autowired
     private RestTemplate client;
 
-    /**
+    *//*
      * Autowired desnecessário, somente utilizado para visualizar as instâncias
      * que o Ribbon está utilizando
-     */
+     *//*
     @Autowired
     private DiscoveryClient eurekaClient;
 
@@ -41,5 +51,5 @@ public class CompraService {
 
         System.out.println(exchange.getBody().getEndereco());
 
-    }
+    }*/
 }
