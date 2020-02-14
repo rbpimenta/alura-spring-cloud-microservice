@@ -2,24 +2,24 @@ package br.com.alura.microservice.fornecedor.dto;
 
 public class ReservaDTO {
 
-	public Integer idReserva;
-	
-	public Integer tempoDePreparo;
+    public Integer idReserva;
 
-	public Integer getIdReserva() {
-		return idReserva;
-	}
+    public Integer tempoDePreparo;
 
-	public void setIdReserva(Integer idReserva) {
-		this.idReserva = idReserva;
-	}
+    public Integer getIdReserva() {
+        return idReserva;
+    }
 
-	public Integer getTempoDePreparo() {
-		return tempoDePreparo;
-	}
+    public void setIdReserva(Integer idReserva) {
+        this.idReserva = idReserva;
+    }
 
-	public void setTempoDePreparo(Integer tempoDePreparo) {
-		this.tempoDePreparo = tempoDePreparo;
-	}
-	
+    public Integer getTempoDePreparo() {
+        return tempoDePreparo;
+    }
+
+    public void setTempoDePreparo(Integer tempoDePreparo) {
+        this.tempoDePreparo = tempoDePreparo;
+    }
+
 }

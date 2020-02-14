@@ -10,12 +10,12 @@ import java.util.List;
 @Service
 public class ProdutoService {
 
-	@Autowired
-	private ProdutoRepository produtoRepository;
-	
-	public List<Produto> getProdutosPorEstado(String estado) {
-		return produtoRepository.findByEstado(estado);
-	}
+    @Autowired
+    private ProdutoRepository produtoRepository;
 
-	
+    public List<Produto> getProdutosPorEstado(String estado) {
+        return produtoRepository.findByEstado(estado);
+    }
+
+
 }

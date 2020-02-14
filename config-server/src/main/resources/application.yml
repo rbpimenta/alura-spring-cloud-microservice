@@ -2,20 +2,20 @@ server:
   port: 8888
 
 # Configurações para acessar o File Systems
-#spring:
-#  profiles:
-#    active: native
-#  cloud:
-#    config:
-#      server:
-#        native:
-#          search-locations: classpath:/microservice-repo
-
-# Configurações para acessar um repositório na nuvem. Exemplo com GitHub
 spring:
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/rbpimenta/alura-spring-cloud-microservice-repo
-          search-paths: fornecedor
+        native:
+          search-locations: classpath:/microservice-repo
+
+# Configurações para acessar um repositório na nuvem. Exemplo com GitHub
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/rbpimenta/alura-spring-cloud-microservice-repo
+#          search-paths: fornecedor

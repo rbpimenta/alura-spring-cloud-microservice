@@ -16,6 +16,7 @@ public class LojaApplication {
      * Necessário pois estamos utilizando o Eureka como Server Discover e, portanto,
      * precisamos da anotação {@link LoadBalanced} para a aplicação da loja reconhecer a aplicação
      * denominada "fornecedor"
+     *
      * @return RestTemplate com LoadBalance
      */
     @Bean

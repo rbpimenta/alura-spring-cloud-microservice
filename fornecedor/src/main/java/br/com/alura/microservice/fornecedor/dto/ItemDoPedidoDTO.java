@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class ItemDoPedidoDTO {
-	private long id;
-	private int quantidade;
+    private long id;
+    private int quantidade;
 }

@@ -57,3 +57,15 @@ Vamos injetar o DiscoveryCliente para analisar o comportamento.
 Para usar iremos reconfigurar a aplicação, não utilizando mais o RestTemplate.
 Nesse momento deixaremos de usar alguns métodos já utilizados na class CompraService
 (que estarão comentados).
+
+#### Distributed Tracing
+
+Use, SL4F to track log from all microsservices, with Papertrail.
+
+Spring Sleuth\
+Documentação: \
+https://spring.io/projects/spring-cloud-sleuth#overview\
+https://cloud.spring.io/spring-cloud-sleuth/reference/html/
+
+Utilizando o nome spring.application.name para exibir o log da aplicação.
+

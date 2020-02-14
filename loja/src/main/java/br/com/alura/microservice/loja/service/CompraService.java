@@ -5,22 +5,30 @@ import br.com.alura.microservice.loja.dto.CompraDTO;
 import br.com.alura.microservice.loja.dto.InfoFornecedorDTO;
 import br.com.alura.microservice.loja.dto.InfoPedidoDTO;
 import br.com.alura.microservice.loja.model.Compra;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CompraService {
 
+    private static final Logger LOG = LoggerFactory.getLogger(CompraService.class);
+
     @Autowired
     private FornecedorClient fornecedorClient;
 
     public Compra realizaCompra(CompraDTO compraDTO) {
 
+        final String estado = compraDTO.getEndereco().getEstado();
+
+        LOG.info("Buscando informações do fornecedor de {}", estado);
+
         // Quem faz agora a requisição para o fornecedor é a interface FornecedorClient
-        InfoFornecedorDTO info = fornecedorClient.getInfoPorEstado(compraDTO.getEndereco().getEstado());
-        System.out.println(info.getEndereco());
+        InfoFornecedorDTO info = fornecedorClient.getInfoPorEstado(estado);
 
         // Realiza pedido
+        LOG.info("Realizando um pedido");
         InfoPedidoDTO pedido = fornecedorClient.realizaPedido(compraDTO.getItens());
 
         // Cria objeto da Compra

@@ -13,11 +13,11 @@ import java.util.List;
 @RequestMapping("/produto")
 public class ProdutoController {
 
-	@Autowired
-	private ProdutoService produtoService;
-	
-	@RequestMapping("/{estado}")
-	public List<Produto> getProdutosPorEstado(@PathVariable("estado") String estado) {
-		return produtoService.getProdutosPorEstado(estado);
-	}
+    @Autowired
+    private ProdutoService produtoService;
+
+    @RequestMapping("/{estado}")
+    public List<Produto> getProdutosPorEstado(@PathVariable("estado") String estado) {
+        return produtoService.getProdutosPorEstado(estado);
+    }
 }

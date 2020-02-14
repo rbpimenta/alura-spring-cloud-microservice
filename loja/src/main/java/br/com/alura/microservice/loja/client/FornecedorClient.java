@@ -16,13 +16,12 @@ import java.util.List;
  * E implementamos na nossa interface os métodos dos serviços que queremos acessar.
  * Ele sabe como acessar visto que o Feign está integrado com o Ribbon e, portanto, sabe se
  * comunicar com o Eureka Server.
- *
  */
 @FeignClient("fornecedor")
 public interface FornecedorClient {
 
     @RequestMapping("/info/{estado}")
-    InfoFornecedorDTO getInfoPorEstado (@PathVariable String estado);
+    InfoFornecedorDTO getInfoPorEstado(@PathVariable String estado);
 
     @PostMapping("/pedido")
     InfoPedidoDTO realizaPedido(@RequestBody List<ItemDaCompraDTO> produtos);
