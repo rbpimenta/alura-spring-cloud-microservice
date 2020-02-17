@@ -69,3 +69,21 @@ https://cloud.spring.io/spring-cloud-sleuth/reference/html/
 
 Utilizando o nome spring.application.name para exibir o log da aplicação.
 
+# Módulo 2
+## Hystrix
+
+Biblioteca para nos auxiliar gerenciar o Circuit Breaker e o Fallback.
+
+### Circuit Breaker
+Ao tentar acessar um  micro serviço podemos "impedir" que o mesmo ultrapasse
+um timeout máximo de 1 segundo, por exemplo. Isso é denominado 
+Circuit Breaker.
+
+### Fallback
+Método que responde algo para o usuário quando ocorre um Circuit Breaker.
+
+### Passo a Passo
+Inclusão de \
+spring-cloud-starter-netflix-hystrix
+
+Implementação de fallback
