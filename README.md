@@ -87,3 +87,16 @@ Inclusão de \
 spring-cloud-starter-netflix-hystrix
 
 Implementação de fallback
+
+## Bulkhead com Hystrix
+Separar Threads entre os micro serviços existentes, de forma que as requisições diferentes não 
+prejudiquem o uso normal do sistema por outros usuários.
+
+Por exemplo, caso um usuário esteja inserindo informações da compra (por um POST), e ele tenha ocupado
+todas as threads disponíveis do sistema, um usuário que esteja querendo ver as informações de um
+produto por exemplo (a partir de um GET) não vai conseguir encontrar threads disponíveis e, com isso,
+ocorrerá um falha.
+
+A melhor abordagem é separar as threads de compra (POST) das de visualização de informação (GET), de 
+forma a não prejudicar a aplicação por algum aumento de requisições de inclusão de compra, conforme 
+problematizado acima.
