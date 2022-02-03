@@ -100,3 +100,21 @@ ocorrerá um falha.
 A melhor abordagem é separar as threads de compra (POST) das de visualização de informação (GET), de 
 forma a não prejudicar a aplicação por algum aumento de requisições de inclusão de compra, conforme 
 problematizado acima.
+
+## Spring Gateway
+https://www.javainuse.com/spring/cloud-gateway-eureka
+
+## Spring Doc API
+Using this along with Spring Gateway we need to add `server.forward-headers-strategy: framework` in 
+`application.yml`. For the current application we have the following:
+
+fornecedor: 
+- http://localhost:8081/swagger-ui/index.html
+- http://localhost:8083/fornecedor/swagger-ui/index.html
+
+loja: 
+- http://localhost:8081/swagger-ui/index.html
+- http://localhost:8083/loja/swagger-ui/index.html
+
+
+https://springdoc.org/

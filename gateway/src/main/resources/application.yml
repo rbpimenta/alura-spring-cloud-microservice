@@ -22,7 +22,11 @@ spring:
           uri: lb://fornecedor
           predicates:
             - Path=/fornecedor/**
+          filters:
+            - RewritePath=/fornecedor/(?<segment>.*), /$\{segment}
         - id: loja
           uri: lb://loja
           predicates:
             - Path=/loja/**
+          filters:
+            - RewritePath=/loja/(?<segment>.*), /$\{segment}

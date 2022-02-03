@@ -16,6 +16,8 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <lombok.version>1.18.22</lombok.version>
+        <springdoc-openappi.version>1.6.5</springdoc-openappi.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
     </properties>
 
@@ -59,7 +61,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
+            <version>${lombok.version}</version>
         </dependency>
         <dependency>
         	<groupId>org.springframework.boot</groupId>
@@ -73,6 +75,12 @@
         	<groupId>mysql</groupId>
         	<artifactId>mysql-connector-java</artifactId>
         	<scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${springdoc-openappi.version}</version>
         </dependency>
     </dependencies>
 

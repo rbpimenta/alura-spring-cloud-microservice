@@ -1,5 +1,6 @@
 server:
   port: 8081 # A aplicação de Fornecedor responde na porta 8081
+  forward-headers-strategy: framework
 
 eureka:
   client:
